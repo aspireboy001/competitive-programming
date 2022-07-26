@@ -4,9 +4,8 @@ using namespace std;
 
 class SGTree {
 
+public:	
 	vector<int> seg;
-
-public:
 
 	SGTree(int n) {
 		seg.resize(4 * n + 1) ;
