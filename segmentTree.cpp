@@ -29,7 +29,7 @@ public:
 	int query(int ind, int low, int high, int l, int r) {
 
 		// no overlap
-		if (r < low || high < l) return INT_MAX ;
+		if (r < low || high < l) return INT_MAX ;//for sum return 0 , for max return INT_MIN
 
 		// complete overlap
 		if (low >= l and high <= r) return seg[ind] ;
