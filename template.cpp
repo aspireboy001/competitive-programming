@@ -41,6 +41,8 @@ using namespace __gnu_pbds;
 #define vpll vector<pair<ll,ll>>
 #define vch vector<char>
 #define vvll vector<vector<ll>>
+#define min_heap priority_queue <int, vector<int>, greater<int>>
+#define max_heap priority_queue <int>
 #define rep(var , start , end) for(int var = start ; var < end ; var++)
 #define rrep(var , start , end) for(int var = start ; var >= end ; var--)
 #define py cout<<"YES"<<nline
