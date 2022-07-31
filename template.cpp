@@ -142,13 +142,7 @@ ll getRandomNumber(ll l, ll r) {return uniform_int_distribution<ll>(l, r)(rng);}
 
 void solve() {
 
-    ll n ; cin >> n ;
-    vll v(n) ;
-
-    rep(i, 0, n) cin >> v[i];
-
-    rep(i, 0, n) cout << v[i] << " ";
-    deb(v)
+    
 }
 
 int main() {
