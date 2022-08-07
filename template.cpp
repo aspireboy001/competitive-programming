@@ -102,8 +102,8 @@ ll *ifact = new ll[200000 + 5];
 precompute:
     fact[0] = 1, ifact[0] = 1;
     for (ll i = 1; i <= 2e5; i++) {
-        fact[i] = mod_mul(fact[i - 1], i, MOD1);
-        ifact[i] = mminvprime(fact[i], MOD1);
+        fact[i] = mod_mul(fact[i - 1], i, MOD);
+        ifact[i] = mminvprime(fact[i], MOD);
     }
 */
 ll ncr(ll n, ll r, ll m, ll *fact, ll *ifact) {ll val1 = fact[n]; ll val2 = ifact[n - r]; ll val3 = ifact[r]; return (((val1 * val2) % m) * val3) % m;}
