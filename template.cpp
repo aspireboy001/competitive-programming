@@ -59,7 +59,6 @@ find_by_order(k) = kth element in set (k = index)
 order_of_key(k) = Number of items strictly smaller than k
 */
 
-
 #ifndef ONLINE_JUDGE
 #define deb(x) cerr << #x <<" "; _print(x); cerr << endl;
 #else
@@ -118,32 +117,11 @@ ll mod_sub(ll a, ll b, ll m) {a = a % m; b = b % m; return (((a - b) % m) + m) %
 ll mod_div(ll a, ll b, ll m) {a = a % m; b = b % m; return (mod_mul(a, mminvprime(b, m), m) + m) % m;}  //only for prime m
 ll phin(ll n) {ll number = n; if (n % 2 == 0) {number /= 2; while (n % 2 == 0) n /= 2;} for (ll i = 3; i <= sqrt(n); i += 2) {if (n % i == 0) {while (n % i == 0)n /= i; number = (number / i * (i - 1));}} if (n > 1)number = (number / n * (n - 1)) ; return number;} //O(sqrt(N))
 ll getRandomNumber(ll l, ll r) {return uniform_int_distribution<ll>(l, r)(rng);}
-
-/*
-    Even Before Odd
-    sort(v.begin(), v.end(), [](int a , int b) {
-        return a % 2 < b % 2 ;
-    });
-
-    stoll       --> string to number
-    to_string   --> number to string
-    'c' - '0'   --> char to digit
-    '0' + i     --> digit to char (i=10 -> ":" ,
-                                    i=11 -> ";"
-                                    '0' == 48 ascii)
-    s.append(len,char)
-
-    print chars(A...Z) : 97 + i(0....25)
-    print chars(a...z) : 65 + i(0....25)
-
-    cout << fixed << setprecision(9);
-
-*/
-
 /*--------------------------------------------------------------------------------------------------------------------------*/
 
-void solve() {
+//////////////   START  ///////////////
 
+void solve() {
     
 }
 
