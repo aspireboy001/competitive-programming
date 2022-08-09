@@ -3,7 +3,7 @@
 
 // CUSTOM BEHAVIOUR IN SETS (stl cpp)
 
-// pii = pari<int,int> 
+// pii = pair<int,int> 
 
 //just an example
 struct comp {
