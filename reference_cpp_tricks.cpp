@@ -23,6 +23,25 @@ set<pii, comp> st;
 
 
 
+
+
+
+
+// ------------------------------------------------------------
+// CUSTOM SORTING IN LIST
+typedef pair<int, int> pii;
+
+list<pii> mylist;
+
+mylist.sort([](const pii & a, const pii & b) { return a.first < b.first; });
+//-------------------------------------------------------------
+
+
+
+
+
+
+
 /*
     Even Before Odd
     sort(v.begin(), v.end(), [](int a , int b) {
