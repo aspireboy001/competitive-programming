@@ -1,8 +1,4 @@
 /*
-    Name    : Chetan Shekhar Patil
-    Batch   : A1
-    Roll No : 17
-
 
     8 Puzzle Problem Solution using Breadth First
     Search
