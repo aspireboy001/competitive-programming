@@ -1,8 +1,5 @@
 /*
-    Name : Chetan Shekhar Patil
-    Batch : A1
-    Roll No : 17
-
+    Author : Chetan Shekhar Patil
     Tic_tac_toe game using minimax algorithm
     (never losing AI ;) )
 */
