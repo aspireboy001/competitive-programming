@@ -1,7 +1,7 @@
 /*
-
+    Author : Chetan Shekhar Patil
     8 Puzzle Problem Solution using Breadth First
-    Search
+    Search algorithm
 
 */
 
@@ -28,7 +28,7 @@ public:
     int destination_node_number ;
 
     // stores all states
-    node allStates[200] ;
+    node allStates[2000] ;
 
     // marks visited node to avoid re-exploration
     set<vector<vector<int>>> visited ;
