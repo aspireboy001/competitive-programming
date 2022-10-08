@@ -1,7 +1,7 @@
 
 
 vll primes(1e6 + 1, 1) ;
-vll prime;
+vll prime;// stores prime numbers
 
 void sieve() {
 
@@ -23,6 +23,7 @@ void sieve() {
     }
 }
 
+// return vector of pair i.e.  { PrimeFactor , How many times it came in number n }  
 vpll getPrimeFactorsWithPower(ll n) {
 
     vpll v ;
