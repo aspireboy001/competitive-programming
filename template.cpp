@@ -26,7 +26,7 @@ using namespace __gnu_pbds;
 #define sz(x) ((int)(x).size())
 #define all(x) (x).begin(), (x).end()
 #define vii vector<int>
-#define pii pair<int,int>
+#define pll pair<ll,ll>
 #define vpii vector<pair<int,int>>
 #define vll vector<ll>
 #define eb emplace_back
