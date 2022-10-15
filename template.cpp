@@ -124,8 +124,7 @@ int main() {
 #endif
     fastio();
 
-    int test_cases ;
-    test_cases = 1 ;
+    int test_cases = 1 ;
     cin >> test_cases ;
 
     while (test_cases--) {
