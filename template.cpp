@@ -85,18 +85,6 @@ void extendgcd(ll a, ll b, ll*v) {if (b == 0) {v[0] = 1; v[1] = 0; v[2] = a; ret
 ll mminv(ll a, ll b) {ll arr[3]; extendgcd(a, b, arr); return arr[0];} //for non prime b
 ll mminvprime(ll a, ll b) {return expo(a, b - 2, b);}
 bool revsort(ll a, ll b) {return a > b;}
-/*
-Declare Globaly:
-ll *fact = new ll[200000 + 5];
-ll *ifact = new ll[200000 + 5];
-
-precompute:
-    fact[0] = 1, ifact[0] = 1;
-    for (ll i = 1; i <= 2e5; i++) {
-        fact[i] = mod_mul(fact[i - 1], i, MOD);
-        ifact[i] = mminvprime(fact[i], MOD);
-    }
-*/
 ll ncr(ll n, ll r, ll m, ll *fact, ll *ifact) {ll val1 = fact[n]; ll val2 = ifact[n - r]; ll val3 = ifact[r]; return (((val1 * val2) % m) * val3) % m;}
 ll npr(ll n, ll r, ll m, ll *fact, ll *ifact) {ll val1 = fact[n]; ll val2 = ifact[n - r];return (((val1 * val2) % m));}
 
