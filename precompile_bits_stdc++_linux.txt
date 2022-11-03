@@ -1,0 +1,15 @@
+You need to find where stdc++.h header file is present, so open the terminal and use the command:
+
+find /usr/include -name 'stdc++.h'
+
+Output:
+
+/usr/include/x86_64-linux-gnu/c++/11/bits/stdc++.h
+
+Go to the above location and open the terminal there and now we are ready to precompile bits/stdc++.h header file.
+
+Use the following command:
+
+sudo g++ -std=c++17 stdc++.h
+
+You'll observe stdc++.h.gch file is now created implying that precompiling is done.
