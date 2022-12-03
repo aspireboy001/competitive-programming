@@ -1,3 +1,11 @@
+/*
+
+	Name : Chetan Shekhar Patil
+	Batch : A1 
+	Roll No : 17
+	
+*/
+
 #include<bits/stdc++.h>
 using namespace std ;
 
@@ -11,6 +19,30 @@ public:
     int completion_Time;
     int priority ;
 };
+
+
+void display(int n , vector<node> &table , float Average_WT , float Average_TAT , bool is_priority = false) {
+
+    if (is_priority)
+        cout << "\n\nid     Pri     AT      BT      CT      WT      TAT" << endl;
+    else
+        cout << "\n\nid     AT      BT      CT      WT       TAT" << endl;
+
+    for (int i = 0 ; i < n ; i++) {
+        cout << "P" << table[i].process_Number + 1 << "\t";
+        if (is_priority)cout << table[i].priority << "\t";
+        cout << table[i].arrival_Time << "\t";
+        cout << table[i].burst_Time << "\t";
+        cout << table[i].completion_Time << "\t";
+        cout << table[i].waiting_Time << "\t";
+        cout << table[i].turn_Around_Time << "\t";
+        cout << endl;
+    }
+
+    cout << "\nAverage waiting time is : " << Average_WT / n << endl;
+    cout << "Average turn around time is : " << Average_TAT / n << endl;
+}
+
 
 void FCFSwithoutAT() {
 
@@ -44,7 +76,7 @@ void FCFSwithoutAT() {
         Average_TAT += (processes[i].turn_Around_Time);
     }
 
-    cout << "id  BT  WT TAT" << endl;
+    cout << "id     BT      WT     TAT" << endl;
 
     for (int i = 0 ; i < n ; i++) {
         cout << "P" << processes[i].process_Number << "\t";
@@ -99,20 +131,8 @@ void FCFSwithAT() {
         Average_TAT += processes[i].turn_Around_Time ;
     }
 
-    cout << "id  AT  BT  CT  WT TAT" << endl;
+    display(n, processes, Average_WT, Average_TAT) ;
 
-    for (int i = 0 ; i < n ; i++) {
-        cout << "P" << processes[i].process_Number << "\t";
-        cout << processes[i].arrival_Time << "\t";
-        cout << processes[i].burst_Time << "\t";
-        cout << processes[i].completion_Time << "\t";
-        cout << processes[i].waiting_Time << "\t";
-        cout << processes[i].turn_Around_Time << "\t";
-        cout << endl;
-    }
-
-    cout << "\nAverage waiting time is : " << Average_WT / n << endl;
-    cout << "Average turn around time is : " << Average_TAT / n << endl;
 }
 
 void round_robbin() {
@@ -158,7 +178,7 @@ void round_robbin() {
     while ( i < n || !q.empty()) {
 
         if (q.empty()) {
-            time++;
+            time = processes[i].arrival_Time;
 
             while (i < n) {
                 if (processes[i].arrival_Time <= time) {
@@ -226,20 +246,7 @@ void round_robbin() {
     }
 
 
-    cout << "\n\nid  AT  BT  CT  WT TAT" << endl;
-
-    for (int i = 0 ; i < n ; i++) {
-        cout << "P" << copy[i].process_Number + 1 << "\t";
-        cout << copy[i].arrival_Time << "\t";
-        cout << copy[i].burst_Time << "\t";
-        cout << copy[i].completion_Time << "\t";
-        cout << copy[i].waiting_Time << "\t";
-        cout << copy[i].turn_Around_Time << "\t";
-        cout << endl;
-    }
-
-    cout << "\nAverage waiting time is : " << Average_WT / n << endl;
-    cout << "Average turn around time is : " << Average_TAT / n << endl;
+    display(n, copy, Average_WT, Average_TAT) ;
 
 }
 
@@ -295,7 +302,7 @@ void priority_scheduling_NP() {
     while ( i < n || (pq.size() != 0)) {
 
         if (pq.size() == 0) {
-            time++;
+            time = processes[i].arrival_Time;
 
             while (i < n) {
                 if (processes[i].arrival_Time <= time) {
@@ -346,20 +353,7 @@ void priority_scheduling_NP() {
     }
 
 
-    cout << "\n\nid  AT  BT  CT  WT TAT" << endl;
-
-    for (int i = 0 ; i < n ; i++) {
-        cout << "P" << copy[i].process_Number + 1 << "\t";
-        cout << copy[i].arrival_Time << "\t";
-        cout << copy[i].burst_Time << "\t";
-        cout << copy[i].completion_Time << "\t";
-        cout << copy[i].waiting_Time << "\t";
-        cout << copy[i].turn_Around_Time << "\t";
-        cout << endl;
-    }
-
-    cout << "\nAverage waiting time is : " << Average_WT / n << endl;
-    cout << "Average turn around time is : " << Average_TAT / n << endl;
+    display(n, copy, Average_WT, Average_TAT, true) ;
 }
 
 
@@ -408,7 +402,7 @@ void priority_scheduling_Premtive() {
     while ( i < n || (pq.size() != 0)) {
 
         if (pq.size() == 0) {
-            time++;
+            time = processes[i].arrival_Time;
 
             while (i < n) {
                 if (processes[i].arrival_Time <= time) {
@@ -477,20 +471,7 @@ void priority_scheduling_Premtive() {
     }
 
 
-    cout << "\n\nid  AT  BT  CT  WT TAT" << endl;
-
-    for (int i = 0 ; i < n ; i++) {
-        cout << "P" << copy[i].process_Number + 1 << "\t";
-        cout << copy[i].arrival_Time << "\t";
-        cout << copy[i].burst_Time << "\t";
-        cout << copy[i].completion_Time << "\t";
-        cout << copy[i].waiting_Time << "\t";
-        cout << copy[i].turn_Around_Time << "\t";
-        cout << endl;
-    }
-
-    cout << "\nAverage waiting time is : " << Average_WT / n << endl;
-    cout << "Average turn around time is : " << Average_TAT / n << endl;
+    display(n, copy, Average_WT, Average_TAT, true) ;
 }
 
 
@@ -541,7 +522,7 @@ void shortest_job_first_NP() {
     while ( i < n || (pq.size() != 0)) {
         cout << time << " ";
         if (pq.size() == 0) {
-            time++;
+            time = processes[i].arrival_Time;
 
             while (i < n) {
                 if (processes[i].arrival_Time <= time) {
@@ -592,20 +573,7 @@ void shortest_job_first_NP() {
     }
 
 
-    cout << "\n\nid  AT  BT  CT  WT TAT" << endl;
-
-    for (int i = 0 ; i < n ; i++) {
-        cout << "P" << copy[i].process_Number + 1 << "\t";
-        cout << copy[i].arrival_Time << "\t";
-        cout << copy[i].burst_Time << "\t";
-        cout << copy[i].completion_Time << "\t";
-        cout << copy[i].waiting_Time << "\t";
-        cout << copy[i].turn_Around_Time << "\t";
-        cout << endl;
-    }
-
-    cout << "\nAverage waiting time is : " << Average_WT / n << endl;
-    cout << "Average turn around time is : " << Average_TAT / n << endl;
+    display(n, copy, Average_WT, Average_TAT) ;
 
 }
 
@@ -648,9 +616,8 @@ void shortest_job_first_premptive() {
     int time = processes[0].arrival_Time ;
 
     while ( i < n || (pq.size() != 0)) {
-        cout << time << " ";
         if (pq.size() == 0) {
-            time++;
+            time = processes[i].arrival_Time;
 
             while (i < n) {
                 if (processes[i].arrival_Time <= time) {
@@ -719,20 +686,7 @@ void shortest_job_first_premptive() {
     }
 
 
-    cout << "\n\nid  AT  BT  CT  WT TAT" << endl;
-
-    for (int i = 0 ; i < n ; i++) {
-        cout << "P" << copy[i].process_Number + 1 << "\t";
-        cout << copy[i].arrival_Time << "\t";
-        cout << copy[i].burst_Time << "\t";
-        cout << copy[i].completion_Time << "\t";
-        cout << copy[i].waiting_Time << "\t";
-        cout << copy[i].turn_Around_Time << "\t";
-        cout << endl;
-    }
-
-    cout << "\nAverage waiting time is : " << Average_WT / n << endl;
-    cout << "Average turn around time is : " << Average_TAT / n << endl;
+    display(n, copy, Average_WT, Average_TAT) ;
 
 }
 
