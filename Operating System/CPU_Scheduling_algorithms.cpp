@@ -1,10 +1,3 @@
-/*
-
-	Name : Chetan Shekhar Patil
-	Batch : A1 
-	Roll No : 17
-	
-*/
 
 #include<bits/stdc++.h>
 using namespace std ;
